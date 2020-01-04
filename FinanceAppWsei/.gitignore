@@ -230,3 +230,11 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+#vscode ignore
+.vscode/
+.history/
+node_modules/
+yarn-error.log
+node_modules/.yarn-error.log
+.prettierrc
