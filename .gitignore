@@ -1,5 +1,6 @@
 #vscode ignore
 .vscode/
+.vs/
 .history/
 node_modules/
 yarn-error.log
