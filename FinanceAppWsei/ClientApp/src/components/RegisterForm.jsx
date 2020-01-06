@@ -31,7 +31,7 @@ const RegisterForm = () => {
         </>
       ) : (
         <Form onSubmit={onSubmitForm}>
-        <h2>A KONTA JAK NIE MOSZ TO TUTEJ SIE REJESTRUJ!</h2>
+        <h2>Rejestracja!</h2>
           <Row form>
             <Col md={6}>
               <FormGroup>

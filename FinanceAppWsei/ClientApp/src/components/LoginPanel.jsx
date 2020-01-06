@@ -9,7 +9,6 @@ const LoginPanel = ({ setUserLogged, userLogged }) => {
       <Container>
         <Row>
           <Col md={6}>
-            <h2>ZALOGUJ SIE TUTEJ KURDE FELEK!</h2>
             <LoginForm setUserLogged={setUserLogged} />
           </Col>
           <Col md={6}>

@@ -23,6 +23,7 @@ const LoginForm = ({setUserLogged}) =>{
 
   return (
     <Form onSubmit={onSubmitForm}>
+      <h2>Zaloguj się!</h2>
       <FormGroup className="mb-2">
         <Label for="loginForm" className="mr-sm-2">Login</Label>
         <Input type="text" name="login" id="loginForm" placeholder="Login" />

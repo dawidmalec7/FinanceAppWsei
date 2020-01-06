@@ -3,6 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginPanel from "./components/LoginPanel";
 import cookie from 'react-cookies';
+import Dashboard from "./components/Dashboard";
+import { withRouter } from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -17,13 +19,20 @@ class App extends Component {
   setUserLogged = (logged) => {
     this.setState({ userLogged: logged })
   }
+
+  logout = () => {
+    cookie.remove('AccessToken');
+    console.log(this.props);
+    this.props.history.push('/');
+    this.setState({ userLogged: false });
+  }
   render(){
     const { userLogged } = this.state;
     return (
         <div className="App">
           <header className="App-header">
             { userLogged 
-            ? "Siema" 
+            ? <Dashboard logout={this.logout}/>
             : <LoginPanel 
                 setUserLogged={this.setUserLogged} 
               />
@@ -35,4 +44,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withRouter(App);
