@@ -24,7 +24,9 @@ class App extends Component {
           <header className="App-header">
             { userLogged 
             ? "Siema" 
-            : <LoginPanel setUserLogged={this.setUserLogged} />
+            : <LoginPanel 
+                setUserLogged={this.setUserLogged} 
+              />
             }
           </header>
 

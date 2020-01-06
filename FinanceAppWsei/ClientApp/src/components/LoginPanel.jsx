@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm.jsx";
 import RegisterForm from "./RegisterForm.jsx";
 import { Col, Row, Container } from "reactstrap";
 
-const LoginPanel = ({ setUserLogged }) => {
+const LoginPanel = ({ setUserLogged, userLogged }) => {
   return (
     <div className="login-panel">
       <Container>
@@ -13,7 +13,6 @@ const LoginPanel = ({ setUserLogged }) => {
             <LoginForm setUserLogged={setUserLogged} />
           </Col>
           <Col md={6}>
-            <h2>A KONTA JAK NIE MOSZ TO TUTEJ SIE REJESTRUJ!</h2>
             <RegisterForm />
           </Col>
         </Row>
