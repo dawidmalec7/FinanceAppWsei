@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LoginForm from "./components/LoginForm.jsx";
+import LoginPanel from "./components/LoginPanel";
 import cookie from 'react-cookies';
 
 class App extends Component {
@@ -24,9 +24,10 @@ class App extends Component {
           <header className="App-header">
             { userLogged 
             ? "Siema" 
-            : <LoginForm setUserLogged = {this.setUserLogged} /> 
+            : <LoginPanel setUserLogged={this.setUserLogged} />
             }
           </header>
+
         </div>
       );
     }

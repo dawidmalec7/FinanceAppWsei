@@ -6,10 +6,11 @@ const LoginForm = ({setUserLogged}) =>{
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    const login = e.target.elements.login.value;
-    const password = e.target.elements.password.value;
+    const {login, password } = e.target.elements;
+    const loginVal = login.value;
+    const passwordVal = password.value;
 
-    Users.login(login, password)
+    Users.login(loginVal, passwordVal)
     .then(resp => {
       cookie.save("AccessToken", resp.data.Data.AccessToken, { path: '/' });
       setUserLogged(true);
