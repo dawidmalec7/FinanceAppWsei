@@ -23,4 +23,4 @@ const MoneyBoxes = {
 
 };
 
-export default Users;
+export default MoneyBoxes;
