@@ -1,14 +1,13 @@
 import axios from "axios";
+import cookie from 'react-cookies';
 
 const hostName = "https://localhost:5001/api";
-// (
-//   () =>
-//   (axios.defaults.headers.common = {
-//     "X-Requested-With": "XMLHttpRequest",
-//     "X-CSRF-Token": document
-//       .querySelector('meta[name="csrf-token"]')
-//       .getAttribute("content")
-//   })
-// )();
+
+(
+  () =>
+    (axios.defaults.headers.common = {
+        'Authorization': "bearer " + cookie.load("AccessToken")
+    })
+)();
 
 export default hostName;

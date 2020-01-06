@@ -1,4 +1,5 @@
 import axios from "axios";
+import hostName from "./default";
 
 const MoneyBoxes = {
   add: ({title, target, value}) => {
