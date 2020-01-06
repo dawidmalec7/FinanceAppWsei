@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -14,7 +15,6 @@ namespace FinanceAppWsei.Models
         public string Login { get; set; }
         public string Password { get; set; }
         public DateTime CreatedOn { get; set; }
-        // Add MoneyBox
-       // public ICollection<MoneyBox> MoneyBoxes { get; set; }
+        public ICollection<MoneyBox> MoneyBoxes { get; set; }
     }
 }
