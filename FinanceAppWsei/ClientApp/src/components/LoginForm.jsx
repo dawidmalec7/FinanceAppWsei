@@ -1,21 +1,32 @@
 import React from "react";
 import Users from "../api/users";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-
-const LoginForm = (props) =>{
+import cookie from 'react-cookies';
+const LoginForm = ({setUserLogged}) =>{
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    console.log(e.target.elements.login.value);
+    const login = e.target.elements.login.value;
+    const password = e.target.elements.password.value;
+
+    Users.login(login, password)
+    .then(resp => {
+      cookie.save("AccessToken", resp.data.Data.AccessToken, { path: '/' });
+      setUserLogged(true);
+    })
+    .catch(err =>{
+      console.error(err);
+      setUserLogged(false);
+    })
   }
 
   return (
     <Form onSubmit={onSubmitForm}>
-      <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+      <FormGroup className="mb-2">
         <Label for="loginForm" className="mr-sm-2">Login</Label>
         <Input type="text" name="login" id="loginForm" placeholder="Login" />
       </FormGroup>
-      <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+      <FormGroup className="mb-2">
         <Label for="pass" className="mr-sm-2">Password</Label>
         <Input type="password" name="password" id="pass" placeholder="Password" />
       </FormGroup>

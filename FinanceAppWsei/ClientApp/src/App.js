@@ -1,17 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginForm from "./components/LoginForm.jsx";
+import cookie from 'react-cookies';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <LoginForm /> 
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    userLogged: false
+  }
+
+  componentWillMount() {
+    this.setState({
+      userLogged: cookie.load('AccessToken') ? true : false
+    })
+  }
+  setUserLogged = (logged) => {
+    this.setState({ userLogged: logged })
+  }
+  render(){
+    const { userLogged } = this.state;
+    return (
+        <div className="App">
+          <header className="App-header">
+            { userLogged 
+            ? "Siema" 
+            : <LoginForm setUserLogged = {this.setUserLogged} /> 
+            }
+          </header>
+        </div>
+      );
+    }
 }
 
 export default App;
