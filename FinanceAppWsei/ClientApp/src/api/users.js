@@ -8,6 +8,14 @@ const Users = {
         "Password": password
     });
   },
+  register: ({firstName, lastName, login, password}) => {
+    return axios.post(`${hostName}/users/register`, {
+      "FirstName": firstName,
+      "LastName": lastName,
+      "Login": login,
+      "Password": password
+    });
+  }
 };
 
 export default Users;
