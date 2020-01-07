@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import MoneyBoxes from "./MoneyBoxes";
+import MoneyBoxes from "./MoneyBoxes/MoneyBoxes";
+import Accounts from "./Accounts/Accounts";
 
 class Dashboard extends Component {
   render() {
@@ -11,8 +12,13 @@ class Dashboard extends Component {
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav mr-auto">
               <li>
-                <Link to={"/moneyboxes"} className="nav-link">
+                <Link to={"/MoneyBoxes/moneyboxes"} className="nav-link">
                   Moneyboxes
+                </Link>
+              </li>
+              <li>
+                <Link to={"/Accounts/accounts"} className="nav-link">
+                  Accounts
                 </Link>
               </li>
               <li>
@@ -22,7 +28,10 @@ class Dashboard extends Component {
           </nav>
           <hr />
           <Switch>
-            <Route path="/moneyboxes" component={MoneyBoxes} />
+            <Route path="/MoneyBoxes/moneyboxes" component={MoneyBoxes} />
+          </Switch>
+          <Switch>
+            <Route path="/Accounts/accounts" component={Accounts} />
           </Switch>
         </div>
       </Router>
