@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MoneyBoxes from "./MoneyBoxes/MoneyBoxes";
 import Accounts from "./Accounts/Accounts";
 import Incomes from "./Incomes/Incomes";
+import Expenses from "./Expenses/Expenses";
 
 class Dashboard extends Component {
   render() {
@@ -28,6 +29,11 @@ class Dashboard extends Component {
                 </Link>
               </li>
               <li>
+                <Link to={"/Expenses/expenses"} className="nav-link">
+                  Expenses
+                </Link>
+              </li>
+              <li>
                 <button className="btn btn-danger" onClick={logout}>Logout</button>
               </li>
             </ul>
@@ -41,6 +47,9 @@ class Dashboard extends Component {
           </Switch>
           <Switch>
             <Route path="/Incomes/incomes" component={Incomes} />
+          </Switch>
+          <Switch>
+            <Route path="/Expenses/expenses" component={Expenses} />
           </Switch>
         </div>
       </Router>
