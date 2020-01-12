@@ -3,7 +3,7 @@ import hostName from "./default";
 
 const Accounts = {
   get: () => {
-      return axios.get(`${hostName}/accounts/get-account-balance`);
+      return axios.get(`${hostName}/accounts`);
   }
 };
 

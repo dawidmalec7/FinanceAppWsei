@@ -30,15 +30,12 @@ class App extends Component {
     const { userLogged } = this.state;
     return (
         <div className="App">
-          <header className="App-header">
             { userLogged 
             ? <Dashboard logout={this.logout}/>
             : <LoginPanel 
                 setUserLogged={this.setUserLogged} 
               />
             }
-          </header>
-
         </div>
       );
     }
