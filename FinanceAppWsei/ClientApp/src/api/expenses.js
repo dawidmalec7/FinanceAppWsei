@@ -3,7 +3,7 @@ import hostName from "./default";
 
 const Expenses = {
   create: ({title, value, categoryId, moneyBoxId}) => {
-    return axios.post(`${hostName}/expenses/create-expense`, {
+    return axios.post(`${hostName}/expenses`, {
         "Title": title,
         "CategoryId": categoryId,
         "MoneyBoxId": moneyBoxId,
@@ -11,7 +11,7 @@ const Expenses = {
     });
   },
   get: () => {
-      return axios.get(`${hostName}/expenses/get-expenses`);
+      return axios.get(`${hostName}/expenses`);
   },
   update: ({id, title, categoryId, value}) => {
       return axios.put(`${hostName}/expenses/${id}`, {
