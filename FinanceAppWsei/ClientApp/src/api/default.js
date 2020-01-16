@@ -5,9 +5,9 @@ const hostName = "https://localhost:5001/api";
 
 (
   () =>
-    (axios.defaults.headers.common = {
-        'Authorization': "bearer " + cookie.load("AccessToken")
-    })
+  (axios.defaults.headers.common = {
+    'Authorization': "bearer " + cookie.load("AccessToken")
+  })
 )();
 
 export default hostName;

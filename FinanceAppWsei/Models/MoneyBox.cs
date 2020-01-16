@@ -16,6 +16,7 @@ namespace FinanceAppWsei.Models
         public double Target { get; set; }
         [NotMapped]
         public double Value { get; set; }
+
         public DateTime CreatedOn { get; set; }
         public User User { get; set; }
         public Guid UserId { get; set; }
