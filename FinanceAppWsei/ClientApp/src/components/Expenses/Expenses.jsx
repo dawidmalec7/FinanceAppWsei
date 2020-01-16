@@ -77,7 +77,7 @@ class Expenses extends Component {
                   <td>{expense.Title}</td>
                   <td>{expense.Value}</td>
                   <td>
-                    <button onClick={() => this.deletEexpense(expense.Id)}>
+                    <button onClick={() => this.deleteExpense(expense.Id)}>
                       Delete
                     </button>
                   </td>
@@ -106,7 +106,7 @@ class Expenses extends Component {
             </Label>
             <Input
               type="text"
-              name="ExpenseValue"
+              name="expenseValue"
               id="valueExpense"
               placeholder="value"
             />

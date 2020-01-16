@@ -56,7 +56,7 @@ class Dashboard extends Component {
             <Route path="/Incomes/incomes" component={(props) => <Incomes {...props} getBallance={this.getBallance} />} />
           </Switch>
           <Switch>
-            <Route path="/Expenses/expenses" component={Expenses} />
+            <Route path="/Expenses/expenses" component={(props) => <Expenses {...props} getBallance={this.getBallance} />} />
           </Switch>
         </div>
       </Router>
