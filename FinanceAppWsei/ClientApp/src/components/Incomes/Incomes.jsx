@@ -75,7 +75,7 @@ class Incomes extends Component {
           <Table striped>
             <thead>
               <tr>
-                <th>#</th>
+                <th>ID</th>
                 <th>Title</th>
                 <th>Value</th>
                 <th>Action</th>

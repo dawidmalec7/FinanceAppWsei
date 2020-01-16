@@ -2,7 +2,6 @@ import React from "react";
 import Users from "../api/users";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import cookie from "react-cookies";
-import setAuthData from "../api/default";
 import axios from "axios";
 const LoginForm = ({ setUserLogged }) => {
   const onSubmitForm = e => {
