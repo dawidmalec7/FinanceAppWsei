@@ -1,5 +1,6 @@
 import React from "react";
 import Users from "../api/users";
+import './Login.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import cookie from 'react-cookies';
 const LoginForm = ({setUserLogged}) =>{
