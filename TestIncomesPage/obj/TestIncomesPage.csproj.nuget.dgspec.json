@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj": {}
+    "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj": {
+    "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj",
+        "projectUniqueName": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj",
         "projectName": "TestIncomesPage",
-        "projectPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj",
-        "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestIncomesPage\\obj\\",
+        "projectPath": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestIncomesPage\\TestIncomesPage.csproj",
+        "packagesPath": "C:\\Users\\Łukasz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestIncomesPage\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Łukasz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

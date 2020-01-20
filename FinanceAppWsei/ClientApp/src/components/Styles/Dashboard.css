@@ -1,0 +1,10 @@
+.navbar-nav .nav-link, .navbar-nav .btn  {
+    padding: 10px;
+}
+
+.balance {
+    color: white;
+    font-size: 20px;
+    margin-right: 5%;
+    font-weight: bold;
+}

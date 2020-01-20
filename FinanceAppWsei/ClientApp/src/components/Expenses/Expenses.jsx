@@ -8,6 +8,7 @@ import {
   Table,
   Container
 } from "reactstrap";
+import "./Expenses.css";
 import ExpensesApi from "../../api/expenses";
 import AccountsApi from "../../api/accounts";
 class Expenses extends Component {
@@ -58,35 +59,6 @@ class Expenses extends Component {
 
     return (
       <Container>
-        <h2>Expenses</h2>
-
-        {expenses.length > 0 && (
-          <Table striped>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Value</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {expenses.map((expense, index) => (
-                <tr>
-                  <th>{index}</th>
-                  <td>{expense.Title}</td>
-                  <td>{expense.Value}</td>
-                  <td>
-                    <button onClick={() => this.deleteExpense(expense.Id)}>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        )}
-
         <h3>Add Expense</h3>
         <Form onSubmit={this.addExpense}>
           <FormGroup className="mb-2">
@@ -111,8 +83,37 @@ class Expenses extends Component {
               placeholder="value"
             />
           </FormGroup>
-          <Button>Submit</Button>
-        </Form>
+          <Button className="btn btn-success">Submit</Button>
+          </Form>
+        <hr />
+        <h3>Expenses</h3>
+        {expenses.length > 0 && (
+          <Table striped className="table-dark table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Value</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {expenses.map((expense, index) => (
+                <tr>
+                  <th>{index}</th>
+                  <td>{expense.Title}</td>
+                  <td>{expense.Value}</td>
+                  <td>
+                    <button onClick={() => this.deleteExpense(expense.Id)} className="btn btn-danger">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
+        <br /><br />
       </Container>
     );
   }

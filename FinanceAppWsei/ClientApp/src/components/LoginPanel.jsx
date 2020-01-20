@@ -1,4 +1,5 @@
 import React from "react";
+import './Styles/Login.css';
 import LoginForm from "./LoginForm.jsx";
 import RegisterForm from "./RegisterForm.jsx";
 import { Col, Row, Container } from "reactstrap";

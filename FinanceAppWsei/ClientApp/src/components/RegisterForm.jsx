@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './Login.css';
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import Users from "../api/users";
 

@@ -8,6 +8,7 @@ import {
   Table,
   Container
 } from "reactstrap";
+import "./Incomes.css";
 import IncomesApi from "../../api/incomes";
 import AccountsApi from "../../api/accounts";
 import MoneyBoxesApi from "../../api/moneyBoxes";
@@ -69,35 +70,6 @@ class Incomes extends Component {
 
     return (
       <Container>
-        <h2>Incomes</h2>
-
-        {incomes.length > 0 && (
-          <Table striped>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Value</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {incomes.map((income, index) => (
-                <tr>
-                  <th>{index}</th>
-                  <td>{income.Title}</td>
-                  <td>{income.Value}</td>
-                  <td>
-                    <button onClick={() => this.deleteIncome(income.Id)}>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        )}
-
         <h3>Add Income</h3>
         <Form onSubmit={this.addIncome}>
           <FormGroup className="mb-2">
@@ -130,8 +102,37 @@ class Incomes extends Component {
               ))}
             </Input>
           </FormGroup>
-          <Button>Submit</Button>
+          <Button className="btn btn-success">Submit</Button>
         </Form>
+        <hr />
+        <h3>Incomes</h3>
+        {incomes.length > 0 && (
+          <Table striped className="table-dark table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Value</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {incomes.map((income, index) => (
+                <tr>
+                  <th>{index}</th>
+                  <td>{income.Title}</td>
+                  <td>{income.Value}</td>
+                  <td>
+                    <button onClick={() => this.deleteIncome(income.Id)} className="btn btn-danger">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
+        <br /><br />
       </Container>
     );
   }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj": {}
+    "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj": {
+    "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj",
+        "projectUniqueName": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj",
         "projectName": "FinanceAppWsei",
-        "projectPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj",
-        "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\obj\\",
+        "projectPath": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj",
+        "packagesPath": "C:\\Users\\Łukasz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\FinanceAppWsei\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Łukasz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,20 +108,20 @@
         }
       }
     },
-    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj": {
+    "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj",
+        "projectUniqueName": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj",
         "projectName": "TestRegisterPage",
-        "projectPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj",
-        "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\obj\\",
+        "projectPath": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj",
+        "packagesPath": "C:\\Users\\Łukasz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\TestRegisterPage\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Łukasz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -134,8 +134,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj": {
-                "projectPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj"
+              "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj": {
+                "projectPath": "C:\\Users\\Łukasz\\Desktop\\naszaapka\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj"
               }
             }
           }
