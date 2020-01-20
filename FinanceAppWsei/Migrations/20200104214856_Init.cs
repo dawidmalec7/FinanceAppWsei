@@ -12,8 +12,10 @@ namespace FinanceAppWsei.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Title = table.Column<string>(nullable: true)
-                },
+                    Title = table.Column<string>(nullable: true),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    CreatedBy = table.Column<Guid>(nullable: false)
+                   },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
