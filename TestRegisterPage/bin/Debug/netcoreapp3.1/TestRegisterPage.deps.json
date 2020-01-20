@@ -2490,21 +2490,45 @@
     "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-LbrynESTp3bm5O/+jGL8v0Qg5SJlTV08lpIpFesXjF6uGNMWqFnUQbYBJwZTeua6E/Y7FIM1C54Ey1btLWupdg==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-LbrynESTp3bm5O/+jGL8v0Qg5SJlTV08lpIpFesXjF6uGNMWqFnUQbYBJwZTeua6E/Y7FIM1C54Ey1btLWupdg==",
+=======
+      "sha512": "sha512-P+J5DBbP8IZ21giMDy45LlGbKEWvZdPEGUdpn3X4wwSOsPPRmaEHkV1Tcvpdbv0vgk4RUkXOZhddvltd6eINkQ==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
     "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-38ugOfkYJqJoX9g6EYRlZB5U2ZJH51UP8ptxZgdpS07FgOEToV+lS11ouNK2PM12Pr6X/PpT5jK82G3DwH/SxQ==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-38ugOfkYJqJoX9g6EYRlZB5U2ZJH51UP8ptxZgdpS07FgOEToV+lS11ouNK2PM12Pr6X/PpT5jK82G3DwH/SxQ==",
+=======
+      "sha512": "sha512-ZSN4KzxWGItvU5aVW9DtbU+w50OXeEnYZSo45dqmSsnQWlvOqZA1JBVrIINbcmsWs/xUDzPRWKwiHYDuBkMSEw==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
     "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
+=======
+      "sha512": "sha512-TXxtKoQt/DkpAX3W4JOOyFFI8tVC+cBTNBJJ3+T3JIBsnaMjjiz3K5cHubnaGuIrlG+b6glZaLnw9NP9ywC80Q==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
@@ -2532,7 +2556,15 @@
     "System.Collections.Concurrent/4.3.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-ztl69Xp0Y/UXCL+3v3tEU+lIy+bvjKNUmopn1wep/a291pVPK7dxBd6T7WnlQqRog+d1a/hSsgRsmFnIBKTPLQ==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-ztl69Xp0Y/UXCL+3v3tEU+lIy+bvjKNUmopn1wep/a291pVPK7dxBd6T7WnlQqRog+d1a/hSsgRsmFnIBKTPLQ==",
+=======
+      "sha512": "sha512-3qHwSqw6RzoPsurenA+ZHeVguUK6Oveb+tFLuMcDFT9xEP+BX+lJ0RFHWQIkRfn9aHAGwCKOTNkawyOHGB6CCA==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "system.collections.concurrent/4.3.0",
       "hashPath": "system.collections.concurrent.4.3.0.nupkg.sha512"
     },
@@ -2679,7 +2711,15 @@
     "System.Diagnostics.Tools/4.3.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
+=======
+      "sha512": "sha512-hgC5lwJRWfEK71SeZ7swJsO30JCk+UZz80o0Gml7CKJd1JljDDIrdqfI5Uk6BrKLJTTbSpLkf5sgtZGo8909aw==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "system.diagnostics.tools/4.3.0",
       "hashPath": "system.diagnostics.tools.4.3.0.nupkg.sha512"
     },
@@ -2693,7 +2733,15 @@
     "System.Diagnostics.Tracing/4.3.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-rswfv0f/Cqkh78rA5S8eN8Neocz234+emGCtTF3lxPY96F+mmmUen6tbn0glN6PMvlKQb9bPAY5e9u7fgPTkKw==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-rswfv0f/Cqkh78rA5S8eN8Neocz234+emGCtTF3lxPY96F+mmmUen6tbn0glN6PMvlKQb9bPAY5e9u7fgPTkKw==",
+=======
+      "sha512": "sha512-8YhepVGpgqV/wvK283bhRbp0kCtqnafPZT+6muPscfqfLbHfag7EjdocR+byl4DuLi9gx9jjOP2k35XRy4I7Bg==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
@@ -2763,14 +2811,30 @@
     "System.Net.NameResolution/4.3.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
+=======
+      "sha512": "sha512-mDHKXVrj0tik81GkUaNhyjqthX5fKC9q/g1mLKs4mSFs0XTwKFEMVWQdt85i0Afduyo3YC/2dCMc1tSCPRSQFw==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "system.net.nameresolution/4.3.0",
       "hashPath": "system.net.nameresolution.4.3.0.nupkg.sha512"
     },
     "System.Net.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-qOu+hDwFwoZPbzPvwut2qATe3ygjeQBDQj91xlsaqGFQUI5i4ZnZb8yyQuLGpDGivEPIt8EJkd1BVzVoP31FXA==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-qOu+hDwFwoZPbzPvwut2qATe3ygjeQBDQj91xlsaqGFQUI5i4ZnZb8yyQuLGpDGivEPIt8EJkd1BVzVoP31FXA==",
+=======
+      "sha512": "sha512-vui5YttLWcDhRagbrRrwXYzFwAxpss8eHca92+iycDVxtqrMCY6jVH5htiLh2kJBJVvoTYd+4gjHfgmn+syrDg==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "system.net.primitives/4.3.0",
       "hashPath": "system.net.primitives.4.3.0.nupkg.sha512"
     },
@@ -2945,7 +3009,15 @@
     "System.Security.Cryptography.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
+=======
+      "sha512": "sha512-ZymYWh57wZRcXaRGYj8H5Z8mXBii/HsXhpJT9fhnq6ENB4hnpWD3J3ovf+RHtCV75J+MCD+TmJSKkg/h+8C8Aw==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "system.security.cryptography.primitives/4.3.0",
       "hashPath": "system.security.cryptography.primitives.4.3.0.nupkg.sha512"
     },
@@ -3057,7 +3129,15 @@
     "System.Xml.XDocument/4.3.0": {
       "type": "package",
       "serviceable": true,
+<<<<<<< HEAD
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
+=======
+<<<<<<< HEAD
+      "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
+=======
+      "sha512": "sha512-vIH2ftiz1M3N8KvhWugsf8DTtZJXBanoD2SGcSAl1FBguY/Ijt01u6nGj4Uvuh1Zmp1j02+RzId+d0bDmA8oVw==",
+>>>>>>> 0d6bcea4d84ebd25a276186739ef56b1a632d420
+>>>>>>> cb632181e93f0d8d46296fcc4071130beba822d9
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
