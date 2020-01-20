@@ -34,6 +34,7 @@ namespace FinanceAppWsei.Controllers
             return new Response(successMessage: "Skarbonka została dodana");
         }
 
+
         [HttpGet]
         public async Task<Response> GetMoneyBoxes()
         {

@@ -1,0 +1,18 @@
+.login-panel {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url("./Images/loginpanel-bg.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-form {
+    padding: 50px;
+}
+
+.register-form {
+    padding: 30px;
+    background: rgba(10, 10, 10, 0.144); 
+}

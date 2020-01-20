@@ -3,21 +3,21 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MoneyBoxes from "./MoneyBoxes/MoneyBoxes";
 import Incomes from "./Incomes/Incomes";
 import Expenses from "./Expenses/Expenses";
+import Categories from "./Categories/Categories";
 import AccountsAPI from "../api/accounts";
 class Dashboard extends Component {
-
   state = {
     balance: 0
-  }
-  componentDidMount(){
+  };
+  componentDidMount() {
     this.getBallance();
   }
 
-  getBallance = () =>{
-    AccountsAPI.get().then(response =>{
-      this.setState({ balance: response.data.Data})
-    })
-  }
+  getBallance = () => {
+    AccountsAPI.get().then(response => {
+      this.setState({ balance: response.data.Data });
+    });
+  };
 
   render() {
     const { logout } = this.props;
@@ -43,20 +43,39 @@ class Dashboard extends Component {
                 </Link>
               </li>
               <li>
-                <button className="btn btn-danger" onClick={logout}>Logout</button>
+                <Link to={"/Categories/Categories"} className="nav-link">
+                  Categories
+                </Link>
+              </li>
+              <li>
+                <button className="btn btn-danger" onClick={logout}>
+                  Logout
+                </button>
               </li>
             </ul>
           </nav>
           <hr />
-         <p>Your balance {balance}</p>
+          <p>Your balance {balance}</p>
           <Switch>
             <Route path="/MoneyBoxes/moneyboxes" component={MoneyBoxes} />
-          </Switch>
-          <Switch>
-            <Route path="/Incomes/incomes" component={(props) => <Incomes {...props} getBallance={this.getBallance} />} />
-          </Switch>
-          <Switch>
-            <Route path="/Expenses/expenses" component={(props) => <Expenses {...props} getBallance={this.getBallance} />} />
+            <Route
+              path="/Incomes/incomes"
+              component={props => (
+                <Incomes {...props} getBallance={this.getBallance} />
+              )}
+            />
+            <Route
+              path="/Expenses/expenses"
+              component={props => (
+                <Expenses {...props} getBallance={this.getBallance} />
+              )}
+            />
+            <Route
+              path="/Categories/Categories"
+              component={props => (
+                <Categories {...props} getBallance={this.getBallance} />
+              )}
+            />
           </Switch>
         </div>
       </Router>

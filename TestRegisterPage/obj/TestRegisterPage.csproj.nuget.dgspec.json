@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/krystiansmolen/FinanceAppWsei/TestRegisterPage/TestRegisterPage.csproj": {}
+    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj": {}
   },
   "projects": {
-    "/Users/krystiansmolen/FinanceAppWsei/FinanceAppWsei/FinanceAppWsei.csproj": {
+    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/krystiansmolen/FinanceAppWsei/FinanceAppWsei/FinanceAppWsei.csproj",
+        "projectUniqueName": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj",
         "projectName": "FinanceAppWsei",
-        "projectPath": "/Users/krystiansmolen/FinanceAppWsei/FinanceAppWsei/FinanceAppWsei.csproj",
-        "packagesPath": "/Users/krystiansmolen/.nuget/packages/",
-        "outputPath": "/Users/krystiansmolen/FinanceAppWsei/FinanceAppWsei/obj/",
+        "projectPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj",
+        "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/krystiansmolen/.config/NuGet/NuGet.Config"
+          "C:\\Users\\xxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -99,33 +104,38 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/krystiansmolen/FinanceAppWsei/TestRegisterPage/TestRegisterPage.csproj": {
+    "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/krystiansmolen/FinanceAppWsei/TestRegisterPage/TestRegisterPage.csproj",
+        "projectUniqueName": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj",
         "projectName": "TestRegisterPage",
-        "projectPath": "/Users/krystiansmolen/FinanceAppWsei/TestRegisterPage/TestRegisterPage.csproj",
-        "packagesPath": "/Users/krystiansmolen/.nuget/packages/",
-        "outputPath": "/Users/krystiansmolen/FinanceAppWsei/TestRegisterPage/obj/",
+        "projectPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\TestRegisterPage.csproj",
+        "packagesPath": "C:\\Users\\xxx\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\TestRegisterPage\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/krystiansmolen/.config/NuGet/NuGet.Config"
+          "C:\\Users\\xxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "/Users/krystiansmolen/FinanceAppWsei/FinanceAppWsei/FinanceAppWsei.csproj": {
-                "projectPath": "/Users/krystiansmolen/FinanceAppWsei/FinanceAppWsei/FinanceAppWsei.csproj"
+              "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj": {
+                "projectPath": "C:\\Users\\xxx\\source\\repos\\FinanceAppWsei\\FinanceAppWsei\\FinanceAppWsei.csproj"
               }
             }
           }
@@ -167,11 +177,14 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

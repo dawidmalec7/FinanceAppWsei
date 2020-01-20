@@ -7,13 +7,20 @@ const LoginPanel = ({ setUserLogged, userLogged }) => {
   return (
     <div className="login-panel">
       <Container>
-        <Row>
-          <Col md={6}>
+        <Row className="login-form">
+          <Col md={4}></Col>
+          <Col md={4}>
             <LoginForm setUserLogged={setUserLogged} />
           </Col>
-          <Col md={6}>
+          <Col md={4}></Col>
+        </Row>
+        
+        <Row className="register-form">
+          <Col md={2}></Col>
+          <Col md={8}>
             <RegisterForm />
           </Col>
+          <Col md={2}></Col>
         </Row>
       </Container>
     </div>

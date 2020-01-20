@@ -13,5 +13,7 @@ namespace FinanceAppWsei.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public string Title { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public Guid CreatedBy { get; set; }
     }
 }

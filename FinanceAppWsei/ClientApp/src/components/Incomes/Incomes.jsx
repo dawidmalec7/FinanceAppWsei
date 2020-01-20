@@ -10,13 +10,16 @@ import {
 } from "reactstrap";
 import IncomesApi from "../../api/incomes";
 import AccountsApi from "../../api/accounts";
+import MoneyBoxesApi from "../../api/moneyBoxes";
 class Incomes extends Component {
   state = {
-    incomes: []
+    incomes: [],
+    moneyBoxes: []
   };
 
   componentDidMount() {
     this.getIncomes();
+    this.getMoneyBoxes();
   }
 
   getIncomes = () => {
@@ -29,13 +32,13 @@ class Incomes extends Component {
 
   addIncome = e => {
     e.preventDefault();
-    const { title, incomeValue } = e.target.elements;
+    const { title, incomeValue, moneyBox } = e.target.elements;
     const { getBallance } = this.props;
 
     const IncomesData = {
       title: title.value,
       CategoryId: "",
-      MoneyBoxId: "",
+      MoneyBoxId: moneyBox.value,
       value: incomeValue.value
     };
 
@@ -53,8 +56,16 @@ class Incomes extends Component {
       .then(this.getIncomes)
       .then(getBallance);
   };
+
+  getMoneyBoxes = () => {
+    MoneyBoxesApi.get().then(response => {
+      this.setState({
+        moneyBoxes: response.data.Data
+      });
+    });
+  };
   render() {
-    const { incomes } = this.state;
+    const { incomes, moneyBoxes } = this.state;
 
     return (
       <Container>
@@ -64,7 +75,7 @@ class Incomes extends Component {
           <Table striped>
             <thead>
               <tr>
-                <th>#</th>
+                <th>ID</th>
                 <th>Title</th>
                 <th>Value</th>
                 <th>Action</th>
@@ -110,6 +121,14 @@ class Incomes extends Component {
               id="valueIncome"
               placeholder="value"
             />
+          </FormGroup>
+          <FormGroup>
+            <Label for="moneyBoxes">Money Boxes</Label>
+            <Input type="select" name="moneyBox" id="moneyBoxes">
+              {moneyBoxes.map(moneyBox => (
+                <option value={moneyBox.Id}>{moneyBox.Title}</option>
+              ))}
+            </Input>
           </FormGroup>
           <Button>Submit</Button>
         </Form>
