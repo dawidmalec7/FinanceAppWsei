@@ -18,12 +18,12 @@ launchSettings.json
 
 # Build results
 
-[Dd]ebug/
+debug/
 [Rr]elease/
 x64/
 build/
 [Bb]in/
-[Oo]bj/
+obj/
 .vs/
 tools
 !tools/packages.config
