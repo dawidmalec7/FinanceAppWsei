@@ -76,16 +76,18 @@ class Incomes extends Component {
             <Label for="titleIncome" className="mr-sm-2">
               Title
             </Label>
+
             <Input
               type="text"
               name="title"
               id="titleIncome"
               placeholder="Title"
             />
+
           </FormGroup>
           <FormGroup className="mb-2">
             <Label for="valueIncome" className="mr-sm-2">
-              value
+              Value
             </Label>
             <Input
               type="text"
@@ -104,7 +106,7 @@ class Incomes extends Component {
           </FormGroup>
           <Button className="btn btn-success">Submit</Button>
         </Form>
-        <hr />
+        
         <h3>Incomes</h3>
         {incomes.length > 0 && (
           <Table striped className="table-dark table-bordered">
@@ -132,7 +134,6 @@ class Incomes extends Component {
             </tbody>
           </Table>
         )}
-        <br /><br />
       </Container>
     );
   }

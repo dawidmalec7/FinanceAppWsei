@@ -2,9 +2,7 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: rgb(152, 197, 197);
 }
 
 .login-form {
@@ -14,4 +12,5 @@
 .register-form {
     padding: 30px;
     background: rgba(10, 10, 10, 0.144); 
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }

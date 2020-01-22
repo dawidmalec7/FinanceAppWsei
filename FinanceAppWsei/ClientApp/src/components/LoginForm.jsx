@@ -47,7 +47,7 @@ const LoginForm = ({ setUserLogged }) => {
           placeholder="Password"
         />
       </FormGroup>
-      <Button>Submit</Button>
+      <Button className="btn btn-success">Submit</Button>
     </Form>
   );
 };

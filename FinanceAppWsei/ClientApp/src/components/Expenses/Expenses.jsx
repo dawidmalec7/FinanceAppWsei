@@ -74,7 +74,7 @@ class Expenses extends Component {
           </FormGroup>
           <FormGroup className="mb-2">
             <Label for="valueExpense" className="mr-sm-2">
-              value
+              Value
             </Label>
             <Input
               type="text"

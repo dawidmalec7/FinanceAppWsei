@@ -80,7 +80,7 @@ const RegisterForm = () => {
               </FormGroup>
             </Col>
           </Row>
-          <Button id='sign-in'>Sign in</Button>
+          <Button className="btn btn-success" id='sign-in'>Sign in</Button>
         </Form>
       )}
     </>
