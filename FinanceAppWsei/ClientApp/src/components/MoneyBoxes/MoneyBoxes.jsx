@@ -51,7 +51,7 @@ class MoneyBoxes extends Component {
     const { moneyBoxes } = this.state;
 
     return (
-      <Container>
+      <Container className="main-container">
         <h2>MoneyBoxes</h2>
 
         {moneyBoxes.length > 0 && (
@@ -82,7 +82,7 @@ class MoneyBoxes extends Component {
         )}
 
         <h3>Add Your Target</h3>
-        <Form onSubmit={this.addMoneyBox}>
+        <Form onSubmit={this.addMoneyBox} className="main-form">
           <FormGroup className="mb-2">
             <Label for="titleMoneyBox" className="mr-sm-2">
               Title
@@ -116,7 +116,7 @@ class MoneyBoxes extends Component {
               placeholder="value"
             />
           </FormGroup>
-          <Button>Submit</Button>
+          <Button className="btn btn-success">Submit</Button>
         </Form>
       </Container>
     );

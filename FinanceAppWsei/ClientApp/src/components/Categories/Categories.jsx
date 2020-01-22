@@ -45,7 +45,7 @@ class Categories extends Component {
     const { Categories } = this.state;
 
     return (
-      <Container>
+      <Container className="main-container">
         <h2>Categories</h2>
 
         {Categories.length > 0 && (
@@ -74,7 +74,7 @@ class Categories extends Component {
         )}
 
         <h3>Add Category</h3>
-        <Form onSubmit={this.addCategory}>
+        <Form onSubmit={this.addCategory} className="main-form">
           <FormGroup className="mb-2">
             <Label for="titleCategory" className="mr-sm-2">
               Title
@@ -86,7 +86,7 @@ class Categories extends Component {
               placeholder="Title"
             />
           </FormGroup>
-          <Button>Submit</Button>
+          <Button className="btn btn-success">Submit</Button>
         </Form>
       </Container>
     );

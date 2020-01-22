@@ -8,7 +8,6 @@ import {
   Table,
   Container
 } from "reactstrap";
-import "./Incomes.css";
 import IncomesApi from "../../api/incomes";
 import AccountsApi from "../../api/accounts";
 import MoneyBoxesApi from "../../api/moneyBoxes";
@@ -69,9 +68,9 @@ class Incomes extends Component {
     const { incomes, moneyBoxes } = this.state;
 
     return (
-      <Container>
+      <Container className="main-container">
         <h3>Add Income</h3>
-        <Form onSubmit={this.addIncome}>
+        <Form onSubmit={this.addIncome} className="main-form">
           <FormGroup className="mb-2">
             <Label for="titleIncome" className="mr-sm-2">
               Title

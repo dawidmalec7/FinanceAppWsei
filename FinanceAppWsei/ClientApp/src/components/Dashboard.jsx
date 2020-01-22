@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./Styles/Dashboard.css";
+import "./Styles/Main.css";
 import MoneyBoxes from "./MoneyBoxes/MoneyBoxes";
 import Incomes from "./Incomes/Incomes";
 import Expenses from "./Expenses/Expenses";
