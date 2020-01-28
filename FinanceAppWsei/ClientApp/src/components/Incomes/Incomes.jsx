@@ -34,6 +34,7 @@ class Incomes extends Component {
     e.preventDefault();
     const { title, incomeValue, moneyBox } = e.target.elements;
     const { getBallance } = this.props;
+    const valueError = document.querySelector(".valueError");
 
     const IncomesData = {
       title: title.value,
@@ -46,7 +47,7 @@ class Incomes extends Component {
       .then(this.getIncomes)
       .then(getBallance)
       .catch(err => {
-        console.error(err);
+        valueError.innerHTML = `Value ${incomeValue.value} is invalid, please enter a number!`;
       });
   };
 
@@ -104,6 +105,7 @@ class Incomes extends Component {
             </Input>
           </FormGroup>
           <Button className="btn btn-success">Submit</Button>
+          <p class="valueError"></p>
         </Form>
         
         <h3>Incomes</h3>
@@ -122,7 +124,7 @@ class Incomes extends Component {
                 <tr>
                   <th>{index}</th>
                   <td>{income.Title}</td>
-                  <td>{income.Value}</td>
+                  <td>{income.Value}$</td>
                   <td>
                     <button onClick={() => this.deleteIncome(income.Id)} className="btn btn-danger">
                       Delete

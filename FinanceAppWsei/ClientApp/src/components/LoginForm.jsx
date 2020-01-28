@@ -9,6 +9,7 @@ const LoginForm = ({ setUserLogged }) => {
     const { login, password } = e.target.elements;
     const loginVal = login.value;
     const passwordVal = password.value;
+    const loginError = document.querySelector(".loginError");
 
     Users.login(loginVal, passwordVal)
       .then(resp => {
@@ -17,8 +18,8 @@ const LoginForm = ({ setUserLogged }) => {
         setAuthData();
       })
       .catch(err => {
-        console.error(err);
         setUserLogged(false);
+        loginError.innerHTML = "Invalid username or password!";
       });
   };
   const setAuthData = () => {
@@ -29,7 +30,7 @@ const LoginForm = ({ setUserLogged }) => {
 
   return (
     <Form onSubmit={onSubmitForm}>
-      <h2>Zaloguj się!</h2>
+      <h2>Sign In</h2>
       <FormGroup className="mb-2">
         <Label for="loginForm" className="mr-sm-2">
           Login
@@ -48,6 +49,7 @@ const LoginForm = ({ setUserLogged }) => {
         />
       </FormGroup>
       <Button className="btn btn-success">Submit</Button>
+      <p class="loginError"></p>
     </Form>
   );
 };

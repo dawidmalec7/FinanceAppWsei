@@ -31,6 +31,7 @@ class Expenses extends Component {
     e.preventDefault();
     const { title, expenseValue } = e.target.elements;
     const { getBallance } = this.props;
+    const valueError = document.querySelector(".valueError");
 
     const ExpensesData = {
       title: title.value,
@@ -43,7 +44,7 @@ class Expenses extends Component {
       .then(this.getExpenses)
       .then(getBallance)
       .catch(err => {
-        console.error(err);
+        valueError.innerHTML = `Value ${expenseValue.value} is invalid, please enter a number!`;
       });
   };
 
@@ -83,6 +84,7 @@ class Expenses extends Component {
             />
           </FormGroup>
           <Button className="btn btn-success">Submit</Button>
+          <p class="valueError"></p>
           </Form>
         <hr />
         <h3>Expenses</h3>
@@ -101,7 +103,7 @@ class Expenses extends Component {
                 <tr>
                   <th>{index}</th>
                   <td>{expense.Title}</td>
-                  <td>{expense.Value}</td>
+                  <td>{expense.Value}$</td>
                   <td>
                     <button onClick={() => this.deleteExpense(expense.Id)} className="btn btn-danger">
                       Delete
