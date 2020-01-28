@@ -1,7 +1,8 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Collections.Generic;
+using System;
+using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
 namespace TestRegisterPage
@@ -41,8 +42,8 @@ namespace TestRegisterPage
 
             IWebElement submitButton = driver.FindElement(By.Id("sign-in"));
             submitButton.Click();
-
-            Thread.Sleep(1000);
+            Thread.Sleep(200);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement balance = driver.FindElement(By.TagName("p"));
 
             Assert.AreEqual("Rejestracja przebiegła pomyślnie! Zaloguj sie obok!", balance.Text);
@@ -58,13 +59,13 @@ namespace TestRegisterPage
             passwordForm.SendKeys("password");
 
             IWebElement submitButton = driver.FindElement(By.TagName("button"));
+
             submitButton.Click();
-            Thread.Sleep(1000);
 
-            IWebElement balance = driver.FindElement(By.TagName("p"));
-            string assertValue = balance.Text;
+            Thread.Sleep(250);
+            string balance = driver.FindElement(By.TagName("button")).Text;
 
-            Assert.AreEqual(assertValue, "Your balance 0");
+            Assert.AreEqual("Logout", balance);
         }
     }
 }
