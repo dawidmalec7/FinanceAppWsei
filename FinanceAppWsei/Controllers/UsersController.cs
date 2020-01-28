@@ -36,7 +36,7 @@ namespace FinanceAppWsei.Controllers
             User userDb = await _context.Users.FirstOrDefaultAsync(u => u.Login == user.Login);
             if (userDb != null)
             {
-                Response.StatusCode = 400;
+                //Response.StatusCode = 400;
                 return new Models.Response(clientError: "Użytkownik o takim loginie już istnieje", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
@@ -53,7 +53,7 @@ namespace FinanceAppWsei.Controllers
             User userDb = await _context.Users.FirstOrDefaultAsync(u => u.Login == user.Login && u.Password == user.Password);
             if (userDb == null)
             {
-                Response.StatusCode = 400;
+                //Response.StatusCode = 400;
                 return new Models.Response(clientError: "Błędny login lub hasło", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
             return new Models.Response(GenerateToken(userDb), successMessage: "Udało się zalogować");

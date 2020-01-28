@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceAppWsei", "FinanceAppWsei\FinanceAppWsei.csproj", "{9116D701-9291-4CDC-A5ED-420C905D0F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceAppWsei", "FinanceAppWsei\FinanceAppWsei.csproj", "{9116D701-9291-4CDC-A5ED-420C905D0F6E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B461E85C-025A-4D75-A20B-5A7D228FFBA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{04663202-EB4C-4DCD-A9E4-5843186FA1D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{04663202-EB4C-4DCD-A9E4-5843186FA1D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
