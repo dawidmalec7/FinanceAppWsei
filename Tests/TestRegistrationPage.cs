@@ -5,7 +5,7 @@ using System;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
-namespace TestRegisterPage
+namespace TestRegistrationPage
 {
     public class Tests
     {

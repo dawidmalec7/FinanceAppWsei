@@ -31,7 +31,7 @@ namespace TestIncomesPage
         [TearDown]
         public void CloseDriver()
         {
-            //driver.Close();
+            driver.Close();
         }
 
         [Test]
