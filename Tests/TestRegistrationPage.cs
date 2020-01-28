@@ -1,30 +1,13 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using System;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
-namespace TestRegistrationPage
+namespace Tests
 {
-    public class Tests
+    public class TestsRegistrationPage : TestConfig
     {
-        private ChromeDriver driver;
-
-        [SetUp]
-        public void Setup()
-        {
-            driver = new ChromeDriver("/Users/krystiansmolen/Downloads");
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("http:localhost:3000");
-        }
-
-        [TearDown]
-        public void CloseDriver()
-        {
-            driver.Close();
-        }
-
         [Test]
         public void ItShouldCreateNewAccounts()
         {
@@ -42,8 +25,8 @@ namespace TestRegistrationPage
 
             IWebElement submitButton = driver.FindElement(By.Id("sign-in"));
             submitButton.Click();
-            Thread.Sleep(200);
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            Thread.Sleep(2000);
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement balance = driver.FindElement(By.TagName("p"));
 
             Assert.AreEqual("Rejestracja przebiegła pomyślnie! Zaloguj sie obok!", balance.Text);
@@ -62,7 +45,8 @@ namespace TestRegistrationPage
 
             submitButton.Click();
 
-            Thread.Sleep(250);
+            Thread.Sleep(2000);
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             string balance = driver.FindElement(By.TagName("button")).Text;
 
             Assert.AreEqual("Logout", balance);
