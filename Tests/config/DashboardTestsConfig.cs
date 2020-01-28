@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace Tests
 {
-    public class DashboardTestsConfig : Variables
+    public class DashboardTestsConfig : SeleniumVariables
     {
         [SetUp]
         public void Setup()

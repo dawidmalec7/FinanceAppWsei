@@ -37,13 +37,13 @@ namespace FinanceAppWsei.Controllers
             if (userDb != null)
             {
                 //Response.StatusCode = 400;
-                return new Models.Response(clientError: "Użytkownik o takim loginie już istnieje", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Models.Response(clientError: "User already exist.", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             user.CreatedOn = DateTime.Now;
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
-            return new Models.Response(successMessage: "Konto zostało założone możesz się zalogować");
+            return new Models.Response(successMessage: "Success! You can log in now!");
         }
 
         [HttpPost]
@@ -54,9 +54,9 @@ namespace FinanceAppWsei.Controllers
             if (userDb == null)
             {
                 //Response.StatusCode = 400;
-                return new Models.Response(clientError: "Błędny login lub hasło", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Models.Response(clientError: "Wrong login or password!", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
-            return new Models.Response(GenerateToken(userDb), successMessage: "Udało się zalogować");
+            return new Models.Response(GenerateToken(userDb), successMessage: "You are logged in!");
         }
 
         private object GenerateToken(User user)
@@ -67,7 +67,7 @@ namespace FinanceAppWsei.Controllers
                     new Claim(ClaimTypes.Role, "User"),
                 };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SecurityKey"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("dd%77*366f6d&f£%%£%FeeeAA33fssDG@@!"));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var lifeTime = DateTime.Now.AddDays(30);
             var token = new JwtSecurityToken(issuer: "localhost:44310", audience: "localhost:44310", claims: claims, expires: lifeTime, signingCredentials: creds);

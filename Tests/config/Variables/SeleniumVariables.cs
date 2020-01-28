@@ -2,9 +2,10 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
+
 namespace Tests
 {
-    public class Variables
+    public class SeleniumVariables
     {
         public string ChromedriverPath = "/Users/krystiansmolen/Downloads";
         public string Host = "http:localhost:3000";

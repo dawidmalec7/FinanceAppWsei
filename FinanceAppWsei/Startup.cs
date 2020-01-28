@@ -54,7 +54,7 @@ namespace FinanceAppWsei
                      ValidateIssuerSigningKey = false,
                      ValidIssuer = "localhost:44310",
                      ValidAudience = "localhost:44310",
-                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SecurityKey"]))
+                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("dd%77*366f6d&f£%%£%FeeeAA33fssDG@@!"))
                  };
              });
 
