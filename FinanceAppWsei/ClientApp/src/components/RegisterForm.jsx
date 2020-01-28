@@ -13,13 +13,14 @@ const RegisterForm = () => {
       firstName: firstName.value,
       lastName: lastName.value
     };
+    const registerError = document.querySelector(".registerError");
 
     Users.register(registerValues)
       .then(resp => {
         setRegisterComplete(true);
       })
       .catch(err => {
-        console.error(err);
+        registerError.innerHTML = "The user is already in the database, please log in!";
       });
   };
 
@@ -31,7 +32,7 @@ const RegisterForm = () => {
         </>
       ) : (
         <Form onSubmit={onSubmitForm}>
-        <h2>Rejestracja!</h2>
+        <h2>Register</h2>
           <Row form>
             <Col md={6}>
               <FormGroup>
@@ -81,6 +82,7 @@ const RegisterForm = () => {
             </Col>
           </Row>
           <Button className="btn btn-success" id='sign-in'>Sign in</Button>
+          <p className="registerError">  </p>
         </Form>
       )}
     </>

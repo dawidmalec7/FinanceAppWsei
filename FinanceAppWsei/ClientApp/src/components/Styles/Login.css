@@ -1,16 +1,21 @@
 .login-panel {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: rgb(152, 197, 197);
 }
 
 .login-form {
-    padding: 50px;
+    padding: 30px;
 }
 
 .register-form {
     padding: 30px;
     background: rgba(10, 10, 10, 0.144); 
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.registerError, .loginError, .valueError {
+    padding: 10px;
+    color: red;
 }
