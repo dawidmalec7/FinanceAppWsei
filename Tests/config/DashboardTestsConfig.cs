@@ -1,19 +1,14 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace Tests
 {
-    public class DashboardTestsConfig
+    public class DashboardTestsConfig : Variables
     {
-        public ChromeDriver driver;
-
         [SetUp]
         public void Setup()
         {
-            driver = new ChromeDriver("/Users/krystiansmolen/Downloads");
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("http:localhost:3000");
+            ConfigChromedriver();
             IWebElement loginForm = driver.FindElement(By.Name("login"));
             loginForm.SendKeys("login");
 
