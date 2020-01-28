@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Tests
 {
-    public class TestsRegistrationPage : TestConfig
+    public class TestsRegistrationPage : SeleniumConfig
     {
         [Test]
         public void ItShouldCreateNewAccounts()
