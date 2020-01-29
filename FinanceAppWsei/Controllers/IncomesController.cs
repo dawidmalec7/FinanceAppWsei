@@ -33,7 +33,7 @@ namespace FinanceAppWsei.Controllers
             income.UserId = userId;
             _context.Incomes.Add(income);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Przychód został zarejestrowany");
+            return new Response(successMessage: "Income has been created!");
         }
 
         [HttpGet]
@@ -54,13 +54,13 @@ namespace FinanceAppWsei.Controllers
             if (incomeDb == null)
             {
                 Response.StatusCode = 400;
-                return new Response(clientError: "Przychód o podanym ID nie zostało znalezione", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Response(clientError: "Income with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             if (incomeDb.UserId != userId)
             {
                 Response.StatusCode = 401;
-                return new Response(clientError: "Nie posiadasz wystarczających uprawnień żeby zarządzać przychodem", statusCode: System.Net.HttpStatusCode.Unauthorized);
+                return new Response(clientError: "Authorization error", statusCode: System.Net.HttpStatusCode.Unauthorized);
             }
 
             incomeDb.Title = income.Title;
@@ -69,7 +69,7 @@ namespace FinanceAppWsei.Controllers
 
             _context.Incomes.Update(incomeDb);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Przychód został zmieniony");
+            return new Response(successMessage: "Income has been changed");
 
         }
 
@@ -83,17 +83,17 @@ namespace FinanceAppWsei.Controllers
             if (incomeDb == null)
             {
                 Response.StatusCode = 400;
-                return new Response(clientError: "Przychód o podanym ID nie zostało znalezione", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Response(clientError: "Income with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             if (incomeDb.UserId != userId)
             {
                 Response.StatusCode = 401;
-                return new Response(clientError: "Nie posiadasz wystarczających uprawnień żeby zarządzać przychodem", statusCode: System.Net.HttpStatusCode.Unauthorized);
+                return new Response(clientError: "Authorization error", statusCode: System.Net.HttpStatusCode.Unauthorized);
             }
             _context.Incomes.Remove(incomeDb);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Przychód został usunięty");
+            return new Response(successMessage: "Income has been deleted");
 
         }
 

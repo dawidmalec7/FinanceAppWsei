@@ -6,7 +6,7 @@ namespace Tests.config
 {
     public class UserVariables : DatabaseVariables
     {
-        public UsersController UserControl;
+        public UsersController UsersControl;
         public User WrongUser = new User
         {
             Login = "test12",
