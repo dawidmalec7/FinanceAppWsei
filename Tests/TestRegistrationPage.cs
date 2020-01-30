@@ -25,11 +25,13 @@ namespace Tests
 
             IWebElement submitButton = driver.FindElement(By.Id("sign-in"));
             submitButton.Click();
-            Thread.Sleep(2000);
-            //new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            IWebElement balance = driver.FindElement(By.TagName("p"));
 
-            Assert.AreEqual("Rejestracja przebiegła pomyślnie! Zaloguj sie obok!", balance.Text);
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.CssSelector("di v.hdtb-mitem:nth-child(1)"))));
+
+            Thread.Sleep(2000);
+            string  notice = driver.FindElement(By.CssSelector(".register-form .col-md-8 p")).Text;
+
+            Assert.AreEqual("Rejestracja przebiegła pomyślnie! Zaloguj sie obok!", notice);
         }
 
         [Test]
@@ -50,6 +52,26 @@ namespace Tests
             string balance = driver.FindElement(By.TagName("button")).Text;
 
             Assert.AreEqual("Logout", balance);
+        }
+
+        [Test]
+        public void ItShouldNotLogInWithWrongCredentials()
+        {
+            IWebElement loginForm = driver.FindElement(By.Name("login"));
+            loginForm.SendKeys("wrong_login");
+
+            IWebElement passwordForm = driver.FindElement(By.Name("password"));
+            passwordForm.SendKeys("wrong_password");
+
+            IWebElement submitButton = driver.FindElement(By.TagName("button"));
+
+            submitButton.Click();
+
+            Thread.Sleep(2000);
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement notice = driver.FindElement(By.ClassName("loginError"));
+
+            Assert.AreEqual("Invalid username or password!", notice.Text);
         }
     }
 }

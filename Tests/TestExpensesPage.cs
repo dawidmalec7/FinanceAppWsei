@@ -38,5 +38,33 @@ namespace Tests
             string balance = driver.FindElement(By.ClassName("balance")).Text;
             Assert.AreEqual("Your balance -100$", balance);
         }
+        [Test]
+        public void ItShouldNotCreateNewExpensesWithWrongValue()
+        {
+            Thread.Sleep(2000);
+
+            IWebElement link = driver.FindElement(By.XPath("//a[@href='/Expenses/expenses']"));
+            link.Click();
+
+            Thread.Sleep(2000);
+
+            IWebElement title = driver.FindElement(By.Id("titleExpense"));
+            title.SendKeys("wydatek");
+
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+            IWebElement value = driver.FindElement(By.Id("valueExpense"));
+            value.SendKeys("wrong_value");
+
+            Thread.Sleep(2000);
+
+            IWebElement submitButton = driver.FindElement(By.ClassName("btn-success"));
+            submitButton.Click();
+
+            Thread.Sleep(2000);
+
+            string notice = driver.FindElement(By.ClassName("valueError")).Text;
+            Assert.AreEqual("Value wrong_value is invalid, please enter a number!", notice);
+        }
     }
 }
