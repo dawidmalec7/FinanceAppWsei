@@ -5,7 +5,7 @@ using Tests.config;
 
 namespace Tests
 {
-    class CategoiesTests : DatabaseVariables
+    class CategoiesContextTests : DatabaseVariables
     {
         [Test]
         public void ShouldCreateCategoryWithCorrectValues()

@@ -5,7 +5,7 @@ using Tests.config;
 
 namespace Tests
 {
-    class MoneyBoxesTests : DatabaseVariables
+    class MoneyBoxesContextTests : DatabaseVariables
     {
         [Test]
         public void ShouldCreateMoneyBoxWithCorrectValues()

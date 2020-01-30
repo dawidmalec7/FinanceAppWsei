@@ -1,42 +1,41 @@
 ﻿using System;
 using NUnit.Framework;
-using FinanceAppWsei.Context;
 using FinanceAppWsei.Models;
-using System.Security.Claims;
 using Tests.config;
 
 namespace Tests
 {
-    class IncomesTests : DatabaseVariables
+    class ExpensesContextTests : DatabaseVariables
     {
         [Test]
-        public void ShouldCreateIncomeWithCorrectValues()
+        public void ShouldCreateExpenseWithCorrectValues()
         {
             SetupDB();
             Guid userId = new Guid();
             databaseContext.Users.Add(new User
             {
                 Id = userId,
-                FirstName = "user",
-                LastName = "useeeer",
-                Login = "test",
-                Password = "test",
+                FirstName = "fdfdf",
+                LastName = "fdfdf",
+                Login = "34234",
+                Password = "654322",
                 CreatedOn = new DateTime(),
             });
             databaseContext.SaveChanges();
 
 
-            Income income = new Income {
+            Expense expense = new Expense
+            {
                 Id = new Guid(),
                 Title = "Title",
                 Value = 100,
                 UserId = userId,
                 CreatedOn = DateTime.Now
-             };
+            };
 
-            databaseContext.Incomes.Add(income);
-            var saveIncome = databaseContext.SaveChanges();
-            Assert.AreEqual(saveIncome, 1);
+            databaseContext.Expenses.Add(expense);
+            var saveExpense = databaseContext.SaveChanges();
+            Assert.AreEqual(saveExpense, 1);
         }
     }
 }
