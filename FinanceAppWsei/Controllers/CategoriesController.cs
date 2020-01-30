@@ -39,7 +39,7 @@ namespace FinanceAppWsei.Controllers
 
             _context.Categories.Add(category);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Dodano nową kategorię"); 
+            return new Response(successMessage: "Category has been created!"); 
         }
 
         [HttpPut]
@@ -50,13 +50,13 @@ namespace FinanceAppWsei.Controllers
             if(categoryDb == null)
             {
                 Response.StatusCode = 400;
-                return new Response(clientError: "Nie znaleziono kategorii", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Response(clientError: "Category with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             categoryDb.Title = category.Title;
             _context.Categories.Update(categoryDb);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Edycja udała się");
+            return new Response(successMessage: "Category has been changed");
         }
     }
 }

@@ -31,7 +31,7 @@ namespace FinanceAppWsei.Controllers
             expense.Value = expense.Value * (-1);
             _context.Expenses.Add(expense);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Wychód został zarejestrowany");
+            return new Response(successMessage: "Expense has been created!");
         }
 
         [HttpGet]
@@ -52,13 +52,13 @@ namespace FinanceAppWsei.Controllers
             if (expenseDb == null)
             {
                 Response.StatusCode = 400;
-                return new Response(clientError: "Wychód o podanym ID nie zostało znalezione", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Response(clientError: "Expense with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             if (expenseDb.UserId != userId)
             {
                 Response.StatusCode = 401;
-                return new Response(clientError: "Nie posiadasz wystarczających uprawnień żeby zarządzać wychodem", statusCode: System.Net.HttpStatusCode.Unauthorized);
+                return new Response(clientError: "Authorization error", statusCode: System.Net.HttpStatusCode.Unauthorized);
             }
 
             expenseDb.Title = expense.Title;
@@ -67,7 +67,7 @@ namespace FinanceAppWsei.Controllers
 
             _context.Expenses.Update(expenseDb);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Wychód został zmieniony");
+            return new Response(successMessage: "Expense has been changed");
 
         }
 
@@ -81,17 +81,17 @@ namespace FinanceAppWsei.Controllers
             if (expenseDb == null)
             {
                 Response.StatusCode = 400;
-                return new Response(clientError: "Wychód o podanym ID nie zostało znalezione", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Response(clientError: "Expense with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             if (expenseDb.UserId != userId)
             {
                 Response.StatusCode = 401;
-                return new Response(clientError: "Nie posiadasz wystarczających uprawnień żeby zarządzać wychodem", statusCode: System.Net.HttpStatusCode.Unauthorized);
+                return new Response(clientError: "Authorization error", statusCode: System.Net.HttpStatusCode.Unauthorized);
             }
             _context.Expenses.Remove(expenseDb);
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Wychód został usunięty");
+            return new Response(successMessage: "Expense has been deleted");
 
         }
     }

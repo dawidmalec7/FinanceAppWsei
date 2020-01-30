@@ -7,13 +7,11 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using FinanceAppWsei.Context;
+
 
 namespace Tests.config
 {
-    class IncomesConfig : IncomesVariables
+    class ExpensesConfig : ExpensesVariables
     {
         [SetUp]
         public void Setup()
@@ -21,7 +19,7 @@ namespace Tests.config
             SetupDB();
             Guid userGuidID = new Guid();
 
-            databaseContext.Incomes.Add(GoodIncome);
+            databaseContext.Expenses.Add(GoodExpense);
             databaseContext.Users.Add(NewUser);
             databaseContext.SaveChanges();
 
@@ -30,9 +28,9 @@ namespace Tests.config
                     new Claim(ClaimTypes.NameIdentifier, userGuidID.ToString()),
                 }, "mock"));
 
-            IncomesControl = new IncomesController(databaseContext);
+            ExpensesControl = new ExpensesController(databaseContext);
 
-            IncomesControl.ControllerContext = new ControllerContext()
+            ExpensesControl.ControllerContext = new ControllerContext()
             {
                 HttpContext = new DefaultHttpContext() { User = userClaimsTypes }
             };
@@ -41,11 +39,11 @@ namespace Tests.config
         [TearDown]
         public void CleanUpContext()
         {
-            DbSet<Income> Incomes = databaseContext.Incomes;
+            DbSet<Expense> Expenses = databaseContext.Expenses;
             DbSet<User> Users = databaseContext.Users;
-            foreach (var Income in Incomes)
+            foreach (var Expense in Expenses)
             {
-                databaseContext.Incomes.Remove(Income);
+                databaseContext.Expenses.Remove(Expense);
             }
             foreach (var User in Users)
             {

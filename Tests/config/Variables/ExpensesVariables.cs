@@ -4,9 +4,9 @@ using System;
 
 namespace Tests.config.Variables
 {
-    class IncomesVariables : DatabaseVariables
+    class ExpensesVariables : DatabaseVariables
     {
-        public IncomesController IncomesControl;
+        public ExpensesController ExpensesControl;
 
         public static User NewUser = new User
         {
@@ -18,9 +18,9 @@ namespace Tests.config.Variables
             CreatedOn = new DateTime(),
         };
 
-        public Income GoodIncome = new Income
+        public Expense GoodExpense = new Expense
         {
-            Title = "Income",
+            Title = "Expense",
             Value = 100
         };
     }
