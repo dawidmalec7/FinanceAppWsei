@@ -3,6 +3,7 @@ using System;
 using FinanceAppWsei.Models;
 using FinanceAppWsei.Controllers;
 using Tests.config.Variables;
+using Microsoft.EntityFrameworkCore;
 
 namespace Tests.config
 {
@@ -23,6 +24,17 @@ namespace Tests.config
                 });
             databaseContext.SaveChanges();
             UsersControl = new UsersController(databaseContext, databaseConfiguration.Object);
+        }
+
+        [TearDown]
+        public void CleanUpContext()
+        {
+            DbSet<User> Users = databaseContext.Users;
+            foreach (var User in Users)
+            {
+                databaseContext.Users.Remove(User);
+            }
+            databaseContext.SaveChanges();
         }
     }
 }
