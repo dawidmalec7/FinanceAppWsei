@@ -2,7 +2,7 @@
 
 namespace Tests
 {
-    public class TestConfig : SeleniumVariables
+    public class SeleniumConfig : SeleniumVariables
     {
         [SetUp]
         public void Setup()
