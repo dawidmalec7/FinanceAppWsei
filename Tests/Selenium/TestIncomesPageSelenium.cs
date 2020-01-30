@@ -13,27 +13,25 @@ namespace Tests
         [Test]
         public void ItShouldSuccessfulCreateNewIncome()
         {
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.XPath("//a[@href='/Incomes/incomes']"))));
 
             IWebElement link = driver.FindElement(By.XPath("//a[@href='/Incomes/incomes']"));
             link.Click();
 
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.Id("titleIncome"))));
 
             IWebElement title = driver.FindElement(By.Id("titleIncome"));
             title.SendKeys("wydatek");
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
             IWebElement value = driver.FindElement(By.Id("valueIncome"));
             value.SendKeys("100");
 
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("btn-success"))));
 
             IWebElement submitButton = driver.FindElement(By.ClassName("btn-success"));
             submitButton.Click();
 
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("balance"))));
 
             string balance = driver.FindElement(By.ClassName("balance")).Text;
             Assert.AreEqual(balance, "Your balance 100$");
@@ -42,27 +40,27 @@ namespace Tests
         [Test]
         public void ItShouldNotCreateNewIncomeWithWrongValue()
         {
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.XPath("//a[@href='/Incomes/incomes']"))));
 
             IWebElement link = driver.FindElement(By.XPath("//a[@href='/Incomes/incomes']"));
             link.Click();
 
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.Id("titleIncome"))));
 
             IWebElement title = driver.FindElement(By.Id("titleIncome"));
             title.SendKeys("wydatek");
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.Id("valueIncome"))));
 
             IWebElement value = driver.FindElement(By.Id("valueIncome"));
             value.SendKeys("wrong_value");
 
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("btn-success"))));
 
             IWebElement submitButton = driver.FindElement(By.ClassName("btn-success"));
             submitButton.Click();
 
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("valueError"))));
 
             string notice = driver.FindElement(By.ClassName("valueError")).Text;
             Assert.AreEqual("Value wrong_value is invalid, please enter a number!", notice);

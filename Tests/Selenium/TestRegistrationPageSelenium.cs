@@ -26,9 +26,7 @@ namespace Tests
             IWebElement submitButton = driver.FindElement(By.Id("sign-in"));
             submitButton.Click();
 
-            //new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.CssSelector("di v.hdtb-mitem:nth-child(1)"))));
-
-            Thread.Sleep(2000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.CssSelector(".register-form .col-md-8 p"))));
             string  notice = driver.FindElement(By.CssSelector(".register-form .col-md-8 p")).Text;
 
             Assert.AreEqual("Rejestracja przebiegła pomyślnie! Zaloguj sie obok!", notice);
@@ -47,8 +45,7 @@ namespace Tests
 
             submitButton.Click();
 
-            Thread.Sleep(2000);
-            //new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.TagName("button"))));
             string balance = driver.FindElement(By.TagName("button")).Text;
 
             Assert.AreEqual("Logout", balance);
@@ -67,8 +64,7 @@ namespace Tests
 
             submitButton.Click();
 
-            Thread.Sleep(2000);
-            //new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("loginError"))));
             IWebElement notice = driver.FindElement(By.ClassName("loginError"));
 
             Assert.AreEqual("Invalid username or password!", notice.Text);
