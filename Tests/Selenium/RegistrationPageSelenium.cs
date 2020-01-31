@@ -4,9 +4,9 @@ using System;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
-namespace Tests
+namespace Tests.Selenium
 {
-    public class TestsRegistrationPage : SeleniumConfig
+    public class RegistrationPage : SeleniumConfig
     {
         [Test]
         public void ItShouldCreateNewAccounts()

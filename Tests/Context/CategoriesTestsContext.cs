@@ -3,7 +3,7 @@ using NUnit.Framework;
 using FinanceAppWsei.Models;
 using Tests.config;
 
-namespace Tests
+namespace Tests.Context
 {
     class CategoiesContextTests : DatabaseVariables
     {

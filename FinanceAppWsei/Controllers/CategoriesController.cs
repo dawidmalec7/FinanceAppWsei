@@ -43,10 +43,11 @@ namespace FinanceAppWsei.Controllers
         }
 
         [HttpPut]
-        public async Task<Response> EditCategory([FromBody] Category category)
+        [Route("{id}")]
+        public async Task<Response> EditCategory([FromBody] Category category, [FromRoute] Guid id)
         {
             Guid userId = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-            Category categoryDb = await _context.Categories.FirstOrDefaultAsync(q => q.Id == category.Id && q.CreatedBy == userId);
+            Category categoryDb = await _context.Categories.FirstOrDefaultAsync(q => q.Id == id && q.CreatedBy == userId);
             if(categoryDb == null)
             {
                 Response.StatusCode = 400;

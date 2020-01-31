@@ -5,7 +5,7 @@ using FinanceAppWsei.Models;
 using System.Security.Claims;
 using Tests.config;
 
-namespace Tests
+namespace Tests.Context
 {
     class IncomesContextTests : DatabaseVariables
     {

@@ -4,9 +4,9 @@ using System;
 using System.Threading;
 using OpenQA.Selenium.Support.UI;
 
-namespace Tests
+namespace Tests.Selenium
 {
-    public class TestsIncomesPage : DashboardTestsConfig
+    public class IncomesPage : DashboardTestsConfig
     {
         
 

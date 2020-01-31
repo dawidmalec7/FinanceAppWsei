@@ -3,9 +3,9 @@ using FinanceAppWsei.Models;
 using System.Threading.Tasks;
 using Tests.config;
 
-namespace Tests
+namespace Tests.Users
 {
-    class TestLoginUser : UserConfig
+    class LoginUser : UserConfig
     {
         [Test]
         public async Task LoginUser_CorrectUserData_LoginSuccesMessage()

@@ -5,9 +5,9 @@ using Tests.config;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace Tests
+namespace Tests.Users
 {
-    class TestRegisterUser : UserConfig
+    class RegisterUser : UserConfig
     {
         [Test]
         public async Task RegisterUser_CorrectUserData_ReturnSuccesMessage()
