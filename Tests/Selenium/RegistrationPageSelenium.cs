@@ -4,7 +4,7 @@ using System;
 using OpenQA.Selenium.Support.UI;
 using System.Threading;
 
-namespace Tests.Selenium
+namespace Tests
 {
     public class RegistrationPage : SeleniumConfig
     {
