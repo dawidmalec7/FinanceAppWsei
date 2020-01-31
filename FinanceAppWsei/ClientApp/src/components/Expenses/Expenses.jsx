@@ -48,12 +48,34 @@ class Expenses extends Component {
       });
   };
 
+  editExpense = e => {
+    e.preventDefault();
+    const { title, expenseValue } = e.target.elements;
+    const { getBallance } = this.props;
+    const valueError = document.querySelector(".valueError");
+
+    const ExpensesData = {
+      title: title.value,
+      CategoryId: "",
+      MoneyBoxId: "",
+      value: expenseValue.value
+    };
+
+    ExpensesApi.create(ExpensesData)
+      .then(this.getExpenses)
+      .then(getBallance)
+      .catch(err => {
+        valueError.innerHTML = `Value ${expenseValue.value} is invalid, please enter a number!`;
+      });
+  };
+
   deleteExpense = id => {
     const { getBallance } = this.props;
     ExpensesApi.delete(id)
       .then(this.getExpenses)
       .then(getBallance);
   };
+
   render() {
     const { expenses } = this.state;
 
