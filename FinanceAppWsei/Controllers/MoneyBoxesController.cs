@@ -31,7 +31,7 @@ namespace FinanceAppWsei.Controllers
             _context.MoneyBoxes.Add(moneyBox);
             await _context.SaveChangesAsync();
 
-            return new Response(successMessage: "Skarbonka została dodana");
+            return new Response(successMessage: "MoneyBoxes has been created!");
         }
 
 
@@ -54,13 +54,13 @@ namespace FinanceAppWsei.Controllers
             if (moneyBoxDb == null)
             {
                 Response.StatusCode = 400;
-                return new Response(clientError: "Skarbonka o podanym ID nie zostało znalezione", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Response(clientError: "MoneyBox with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             if (moneyBoxDb.UserId != userId)
             {
                 Response.StatusCode = 401;
-                return new Response(clientError: "Nie posiadasz wystarczających uprawnień żeby zarządzać skarbonką", statusCode: System.Net.HttpStatusCode.Unauthorized);
+                return new Response(clientError: "Authorization error", statusCode: System.Net.HttpStatusCode.Unauthorized);
             }
 
             moneyBoxDb.Title = moneyBox.Title;
@@ -69,7 +69,7 @@ namespace FinanceAppWsei.Controllers
             _context.MoneyBoxes.Update(moneyBoxDb);
             await _context.SaveChangesAsync();
 
-            return new Response(successMessage: "Skarbonka została zmieniona");
+            return new Response(successMessage: "MoneyBox has been changed");
         }
 
         [HttpDelete]
@@ -81,13 +81,13 @@ namespace FinanceAppWsei.Controllers
             if (moneyBox == null)
             {
                 Response.StatusCode = 400;
-                return new Response(clientError: "Skarbonka o podanym ID nie zostało znalezione", statusCode: System.Net.HttpStatusCode.BadRequest);
+                return new Response(clientError: "MoneyBox with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
             }
 
             if (moneyBox.UserId != userId)
             {
                 Response.StatusCode = 401;
-                return new Response(clientError: "Nie posiadasz wystarczających uprawnień żeby zarządzać skarbonką", statusCode: System.Net.HttpStatusCode.Unauthorized);
+                return new Response(clientError: "Authorization error", statusCode: System.Net.HttpStatusCode.Unauthorized);
             }
 
             moneyBox.Value = (_context.Incomes.Where(i => i.MoneyBoxId == id).Select(i => i.Value).Sum() + _context.Expenses.Where(i => i.MoneyBoxId == id).Select(i => i.Value).Sum()) * (-1);
@@ -104,7 +104,7 @@ namespace FinanceAppWsei.Controllers
             _context.MoneyBoxes.Remove(moneyBox);
 
             await _context.SaveChangesAsync();
-            return new Response(successMessage: "Skarbonka została usunięta");
+            return new Response(successMessage: "MoneyBox has been deleted");
         }
     }
 }
