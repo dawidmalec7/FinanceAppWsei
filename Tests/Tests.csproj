@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FinanceAppWsei\FinanceAppWsei.csproj" />
+    <Folder Include="Context\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Context\" />
+    <ProjectReference Include="..\FinanceAppWsei\FinanceAppWsei.csproj" />
   </ItemGroup>
 </Project>

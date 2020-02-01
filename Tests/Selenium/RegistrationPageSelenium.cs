@@ -26,10 +26,15 @@ namespace Tests.Selenium
             IWebElement submitButton = driver.FindElement(By.Id("sign-in"));
             submitButton.Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.CssSelector(".register-form .col-md-8 p"))));
-            string  notice = driver.FindElement(By.CssSelector(".register-form .col-md-8 p")).Text;
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                .Until(SeleniumExtras
+                .WaitHelpers
+                .ExpectedConditions
+                .TextToBePresentInElementLocated(By.CssSelector(".register-form .col-md-8 p"), "Rejestracja przebiegła pomyślnie! Zaloguj sie obok!"));
 
-            Assert.AreEqual("Rejestracja przebiegła pomyślnie! Zaloguj sie obok!", notice);
+
+            IWebElement notice = driver.FindElement(By.CssSelector(".register-form .col-md-8 p"));
+            Assert.AreEqual("Rejestracja przebiegła pomyślnie! Zaloguj sie obok!", notice.Text);
         }
 
         [Test]
@@ -45,7 +50,7 @@ namespace Tests.Selenium
 
             submitButton.Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.TagName("button"))));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable((By.CssSelector(".btn-danger"))));
             string balance = driver.FindElement(By.TagName("button")).Text;
 
             Assert.AreEqual("Logout", balance);
@@ -64,7 +69,12 @@ namespace Tests.Selenium
 
             submitButton.Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("loginError"))));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10))
+                .Until(SeleniumExtras
+                .WaitHelpers
+                .ExpectedConditions
+                .TextToBePresentInElementLocated(By.CssSelector(".loginError"), "Invalid username or password!"));
+
             IWebElement notice = driver.FindElement(By.ClassName("loginError"));
 
             Assert.AreEqual("Invalid username or password!", notice.Text);
