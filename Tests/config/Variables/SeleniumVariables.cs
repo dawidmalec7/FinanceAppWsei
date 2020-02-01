@@ -8,7 +8,7 @@ namespace Tests
 {
     public class SeleniumVariables : DatabaseVariables
     {
-        public string ChromedriverPath = "/Users/krystiansmolen/Downloads";
+        public string ChromedriverPath = "C:/chromedriver1";
         public string Host = "http:localhost:3000";
         public ChromeDriver driver;
 

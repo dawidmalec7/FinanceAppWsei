@@ -35,7 +35,7 @@ namespace Tests.Selenium
 
 
             string balance = driver.FindElement(By.ClassName("balance")).Text;
-            Assert.AreEqual(balance, "Your balance 100$");
+            Assert.AreEqual("Your balance 100$", balance);
         }
 
         [Test]

@@ -31,7 +31,7 @@ namespace Tests.Selenium
             IWebElement submitButton = driver.FindElement(By.ClassName("btn-success"));
             submitButton.Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("balance"))));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementLocated(By.ClassName("balance"), "Your balance -100$"));
 
             string balance = driver.FindElement(By.ClassName("balance")).Text;
             Assert.AreEqual("Your balance -100$", balance);
@@ -57,7 +57,7 @@ namespace Tests.Selenium
             IWebElement submitButton = driver.FindElement(By.ClassName("btn-success"));
             submitButton.Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By.ClassName("valueError"))));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementLocated(By.ClassName("valueError"), "Value wrong_value is invalid, please enter a number!"));
 
             string notice = driver.FindElement(By.ClassName("valueError")).Text;
             Assert.AreEqual("Value wrong_value is invalid, please enter a number!", notice);
