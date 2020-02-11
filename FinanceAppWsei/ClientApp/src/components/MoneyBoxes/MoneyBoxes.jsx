@@ -28,16 +28,14 @@ class MoneyBoxes extends Component {
 
   addMoneyBox = e => {
     e.preventDefault();
-    const { titleMoneyBox, targetMoneyBox, valueMoneyBox } = e.target.elements;
+    const { titleMoneyBox, targetMoneyBox } = e.target.elements;
 
     const moneyBoxesData = {
       title: titleMoneyBox.value,
-      target: targetMoneyBox.value,
-      value: valueMoneyBox.value
+      target: targetMoneyBox.value
     };
 
     MoneyBoxesApi.add(moneyBoxesData)
-      .then(this.getMoneyBoxes)
       .then(this.getMoneyBoxes)
       .catch(err => {
         console.error(err);
@@ -49,7 +47,7 @@ class MoneyBoxes extends Component {
   };
   render() {
     const { moneyBoxes } = this.state;
-
+    console.log(this.state);
     return (
       <Container className="main-container">
         <h2>MoneyBoxes</h2>
@@ -60,7 +58,8 @@ class MoneyBoxes extends Component {
               <tr>
                 <th>#</th>
                 <th>Title</th>
-                <th>Value</th>
+                <th>Target</th>
+                <th>Cash</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -69,7 +68,10 @@ class MoneyBoxes extends Component {
                 <tr>
                   <th>{index}</th>
                   <td>{moneyBox.Title}</td>
-                  <td>{moneyBox.Value}</td>
+                  <td>{moneyBox.Target}</td>
+                  <td>
+                    {parseInt(moneyBox.Target) + parseInt(moneyBox.Value)}
+                  </td>
                   <td>
                     <button onClick={() => this.deleteMoneyBox(moneyBox.Id)}>
                       Delete
@@ -103,17 +105,6 @@ class MoneyBoxes extends Component {
               name="target"
               id="targetMoneyBox"
               placeholder="Target"
-            />
-          </FormGroup>
-          <FormGroup className="mb-2">
-            <Label for="valueMoneyBox" className="mr-sm-2">
-              Cash
-            </Label>
-            <Input
-              type="text"
-              name="incomeValue"
-              id="valueMoneyBox"
-              placeholder="value"
             />
           </FormGroup>
           <Button className="btn btn-success">Submit</Button>

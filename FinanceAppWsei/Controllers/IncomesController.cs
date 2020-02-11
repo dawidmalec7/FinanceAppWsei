@@ -66,6 +66,7 @@ namespace FinanceAppWsei.Controllers
             incomeDb.Title = income.Title;
             incomeDb.Value = income.Value;
             incomeDb.CategoryId = income.CategoryId;
+            incomeDb.MoneyBoxId = income.MoneyBoxId;
 
             _context.Incomes.Update(incomeDb);
             await _context.SaveChangesAsync();

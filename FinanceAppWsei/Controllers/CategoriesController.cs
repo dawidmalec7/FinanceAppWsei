@@ -59,5 +59,24 @@ namespace FinanceAppWsei.Controllers
             await _context.SaveChangesAsync();
             return new Response(successMessage: "Category has been changed");
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<Response> DeleteCategory([FromRoute] Guid id)
+        {
+            Guid userId = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            Category categoryDb = await _context.Categories.FirstOrDefaultAsync(q => q.Id == id);
+
+            if (categoryDb == null)
+            {
+                Response.StatusCode = 400;
+                return new Response(clientError: "Category with provided ID hasn't been found", statusCode: System.Net.HttpStatusCode.BadRequest);
+            }
+
+            _context.Categories.Remove(categoryDb);
+            await _context.SaveChangesAsync();
+            return new Response(successMessage: "Category has been deleted");
+
+        }
     }
 }

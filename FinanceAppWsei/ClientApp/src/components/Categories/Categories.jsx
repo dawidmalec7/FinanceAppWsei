@@ -12,7 +12,10 @@ import CategoriesApi from "../../api/categories";
 
 class Categories extends Component {
   state = {
-    Categories: []
+    categories: [],
+    categoryForm: {
+      title: ""
+    }
   };
 
   componentDidMount() {
@@ -22,16 +25,16 @@ class Categories extends Component {
   getCategories = () => {
     CategoriesApi.get().then(response => {
       this.setState({
-        Categories: response.data.Data
+        categories: response.data.Data
       });
     });
   };
 
   addCategory = e => {
     e.preventDefault();
-    const { title } = e.target.elements;
+    const { categoryForm } = this.state;
 
-    CategoriesApi.add(title)
+    CategoriesApi.add(categoryForm.title)
       .then(this.getCategories)
       .catch(err => {
         console.error(err);
@@ -41,14 +44,17 @@ class Categories extends Component {
   deleteCategory = id => {
     CategoriesApi.delete(id).then(this.getCategories);
   };
+  onChangeTitle = e => {
+    this.setState({ categoryForm: { title: e.target.value } });
+  };
   render() {
-    const { Categories } = this.state;
+    const { categories, categoryForm } = this.state;
 
     return (
       <Container className="main-container">
         <h2>Categories</h2>
 
-        {Categories.length > 0 && (
+        {categories.length > 0 && (
           <Table striped>
             <thead>
               <tr>
@@ -58,12 +64,12 @@ class Categories extends Component {
               </tr>
             </thead>
             <tbody>
-              {Categories.map((Category, index) => (
+              {categories.map((category, index) => (
                 <tr>
                   <th>{index}</th>
-                  <td>{Category.Value}</td>
+                  <td>{category.Title}</td>
                   <td>
-                    <button onClick={() => this.deleteCategory(Category.Id)}>
+                    <button onClick={() => this.deleteCategory(category.Id)}>
                       Delete
                     </button>
                   </td>
@@ -81,9 +87,11 @@ class Categories extends Component {
             </Label>
             <Input
               type="text"
-              name="title"
+              name="titleCategory"
               id="titleCategory"
               placeholder="Title"
+              value={categoryForm.title}
+              onChange={this.onChangeTitle}
             />
           </FormGroup>
           <Button className="btn btn-success">Submit</Button>
