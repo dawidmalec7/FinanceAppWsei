@@ -43,11 +43,35 @@ class MoneyBoxes extends Component {
   };
 
   deleteMoneyBox = id => {
-    MoneyBoxesApi.delete(id).then(this.getmoneyBoxes);
+    MoneyBoxesApi.delete(id).then(this.getMoneyBoxes);
+  };
+
+  onChange(e, index) {
+    let copyMoneyBoxes = [...this.state.moneyBoxes];
+    copyMoneyBoxes[index][e.target.name] =
+      e.target.value === "empty" ? null : e.target.value;
+    this.setState({ moneyBoxes: copyMoneyBoxes });
+  }
+
+  editMoneyBox = (e, index, moneyBoxId) => {
+    const { moneyBoxes } = this.state;
+    const { Title, Target } = moneyBoxes[index];
+
+    MoneyBoxesApi.edit(moneyBoxId, Title, Target)
+      .then(response => {
+        this.setIsEdited(index, false);
+      })
+      .then(this.getMoneyBoxes);
+  };
+
+  setIsEdited = (id, flag) => {
+    const { moneyBoxes } = this.state;
+    let copyMoneyBoxes = [...moneyBoxes];
+    copyMoneyBoxes[id].isEdited = flag;
+    this.setState({ moneyBoxes: copyMoneyBoxes });
   };
   render() {
     const { moneyBoxes } = this.state;
-    console.log(this.state);
     return (
       <Container className="main-container">
         <h2>MoneyBoxes</h2>
@@ -65,17 +89,56 @@ class MoneyBoxes extends Component {
             </thead>
             <tbody>
               {moneyBoxes.map((moneyBox, index) => (
-                <tr>
+                <tr key={moneyBox.Id}>
                   <th>{index}</th>
-                  <td>{moneyBox.Title}</td>
-                  <td>{moneyBox.Target}</td>
                   <td>
-                    {parseInt(moneyBox.Target) + parseInt(moneyBox.Value)}
+                    {moneyBox.isEdited ? (
+                      <Input
+                        type="text"
+                        name="Title"
+                        id="valueEditmoneyBox"
+                        placeholder="title"
+                        value={moneyBox.Title}
+                        onChange={e => this.onChange(e, index)}
+                      />
+                    ) : (
+                      moneyBox.Title
+                    )}
                   </td>
                   <td>
-                    <button onClick={() => this.deleteMoneyBox(moneyBox.Id)}>
+                    {moneyBox.isEdited ? (
+                      <Input
+                        type="text"
+                        name="Target"
+                        id="valueEditmoneyBox"
+                        placeholder="value"
+                        value={moneyBox.Target}
+                        onChange={e => this.onChange(e, index)}
+                      />
+                    ) : (
+                      `${moneyBox.Target}$`
+                    )}
+                  </td>
+                  <td>{parseInt(-moneyBox.Value)}$</td>
+                  <td>
+                    {moneyBox.isEdited ? (
+                      <button
+                        onClick={e => this.editMoneyBox(e, index, moneyBox.Id)}
+                        className="btn btn-danger"
+                      >
+                        Confirm
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => this.setIsEdited(index, true)}
+                        className="btn btn-danger"
+                      >
+                        Edit
+                      </button>
+                    )}
+                    {/* <button onClick={() => this.deleteMoneyBox(moneyBox.Id)}>
                       Delete
-                    </button>
+                    </button> */}
                   </td>
                 </tr>
               ))}

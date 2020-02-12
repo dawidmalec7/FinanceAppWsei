@@ -16,11 +16,11 @@ const MoneyBoxes = {
   get: () => {
     return axios.get(`${hostName}/moneyboxes`);
   },
-  edit: ({
+  edit: (
     id,
     title,
     target
-  }) => {
+  ) => {
     return axios.put(`${hostName}/moneyboxes/${id}`, {
       "Title": title,
       "Target": target

@@ -52,10 +52,10 @@ class Dashboard extends Component {
             </ul>
             <span className="balance">Your balance {balance}$</span>
             <button className="btn btn-danger" onClick={logout}>
-                Logout
+              Logout
             </button>
           </nav>
-    
+
           <Switch>
             <Route path="/MoneyBoxes/moneyboxes" component={MoneyBoxes} />
             <Route

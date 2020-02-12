@@ -64,6 +64,7 @@ namespace FinanceAppWsei.Controllers
             expenseDb.Title = expense.Title;
             expenseDb.Value = expense.Value;
             expenseDb.CategoryId = expense.CategoryId;
+            expenseDb.MoneyBoxId = expense.MoneyBoxId;  
 
             _context.Expenses.Update(expenseDb);
             await _context.SaveChangesAsync();

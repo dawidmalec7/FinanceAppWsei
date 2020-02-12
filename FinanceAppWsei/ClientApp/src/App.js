@@ -22,7 +22,6 @@ class App extends Component {
 
   logout = () => {
     cookie.remove('AccessToken');
-    console.log(this.props);
     this.props.history.push('/');
     this.setState({ userLogged: false });
   }

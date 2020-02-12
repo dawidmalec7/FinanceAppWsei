@@ -15,8 +15,7 @@ class Incomes extends Component {
   state = {
     incomes: [],
     moneyBoxes: [],
-    categories: [],
-    isEdited: false
+    categories: []
   };
 
   componentDidMount() {
@@ -53,7 +52,6 @@ class Incomes extends Component {
       moneyBoxId: moneyBox.value === "empty" ? null : moneyBox.value,
       value: incomeValue.value
     };
-
     IncomesApi.create(IncomesData)
       .then(this.getIncomes)
       .then(getBallance)
@@ -131,30 +129,30 @@ class Incomes extends Component {
               placeholder="value"
             />
           </FormGroup>
-          {moneyBoxes.length !== 0 && (
-            <FormGroup>
-              <Label for="moneyBoxes">Money Boxes</Label>
-              <Input type="select" name="moneyBox" id="moneyBoxes">
-                <option value="empty">Empty</option>
-                {moneyBoxes.map(moneyBox => (
-                  <option value={moneyBox.Id}>{moneyBox.Title}</option>
-                ))}
-              </Input>
-            </FormGroup>
-          )}
-          {categories.length !== 0 && (
-            <FormGroup>
-              <Label for="categories">Categories</Label>
-              <Input type="select" name="categoryId" id="categories">
-                <option value="empty">Empty</option>
-                {categories.map(category => (
-                  <option value={category.Id}>{category.Title}</option>
-                ))}
-              </Input>
-            </FormGroup>
-          )}
+          <FormGroup>
+            <Label for="moneyBoxes">Money Boxes</Label>
+            <Input type="select" name="moneyBox" id="moneyBoxes">
+              <option value="empty">Empty</option>
+              {moneyBoxes.map(moneyBox => (
+                <option key={moneyBox.Id} value={moneyBox.Id}>
+                  {moneyBox.Title}
+                </option>
+              ))}
+            </Input>
+          </FormGroup>
+          <FormGroup>
+            <Label for="categories">Categories</Label>
+            <Input type="select" name="categoryId" id="categories">
+              <option value="empty">Empty</option>
+              {categories.map(category => (
+                <option key={category.Id} value={category.Id}>
+                  {category.Title}
+                </option>
+              ))}
+            </Input>
+          </FormGroup>
           <Button className="btn btn-success">Submit</Button>
-          <p class="valueError"></p>
+          <p className="valueError"></p>
         </Form>
 
         <h3>Incomes</h3>
@@ -179,7 +177,7 @@ class Incomes extends Component {
                   cat => cat.Id === income.CategoryId
                 )[0];
                 return (
-                  <tr>
+                  <tr key={income.Id}>
                     <th>{index}</th>
                     <td>
                       {income.isEdited ? (
