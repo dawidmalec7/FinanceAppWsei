@@ -10,10 +10,10 @@ const Categories = {
   get: () => {
     return axios.get(`${hostName}/categories`);
   },
-  edit: ({
+  edit: (
     id,
     title
-  }) => {
+  ) => {
     return axios.put(`${hostName}/categories/${id}`, {
       "Title": title
     });

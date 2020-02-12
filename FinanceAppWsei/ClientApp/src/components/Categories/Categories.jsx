@@ -41,6 +41,32 @@ class Categories extends Component {
       });
   };
 
+  onChange(e, index) {
+    let copyCategories = [...this.state.categories];
+    copyCategories[index][e.target.name] =
+      e.target.value === "empty" ? null : e.target.value;
+    this.setState({ categories: copyCategories });
+  }
+
+  editCategory = (e, index, categoryId) => {
+    const { categories } = this.state;
+    const { getBallance } = this.props;
+    const { Title } = categories[index];
+
+    CategoriesApi.edit(categoryId, Title)
+      .then(response => {
+        this.setIsEdited(index, false);
+      })
+      .then(getBallance);
+  };
+
+  setIsEdited = (id, flag) => {
+    const { categories } = this.state;
+    let copyCategories = [...categories];
+    copyCategories[id].isEdited = flag;
+    this.setState({ categories: copyCategories });
+  };
+
   deleteCategory = id => {
     CategoriesApi.delete(id).then(this.getCategories);
   };
@@ -65,11 +91,42 @@ class Categories extends Component {
             </thead>
             <tbody>
               {categories.map((category, index) => (
-                <tr>
+                <tr key={category.Id}>
                   <th>{index}</th>
-                  <td>{category.Title}</td>
                   <td>
-                    <button onClick={() => this.deleteCategory(category.Id)}>
+                    {category.isEdited ? (
+                      <Input
+                        type="text"
+                        name="Title"
+                        id="valueEditCategory"
+                        placeholder="title"
+                        value={category.Title}
+                        onChange={e => this.onChange(e, index)}
+                      />
+                    ) : (
+                      category.Title
+                    )}
+                  </td>
+                  <td>
+                    {category.isEdited ? (
+                      <button
+                        onClick={e => this.editCategory(e, index, category.Id)}
+                        className="btn btn-danger"
+                      >
+                        Confirm
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => this.setIsEdited(index, true)}
+                        className="btn btn-danger"
+                      >
+                        Edit
+                      </button>
+                    )}
+                    <button
+                      className="ml-4 btn btn-danger"
+                      onClick={() => this.deleteCategory(category.Id)}
+                    >
                       Delete
                     </button>
                   </td>
