@@ -3,7 +3,7 @@
 Finance App to prosta aplikacja służąca do zarządzania finansami. 
 Jej główne funkcjonalności to przechowywanie aktualnego stanu pieniędzy na koncie, saldo przychodów i rozchodów 
 jak również możliwość dodawania kolejnych użytkowników. Projekt realizowany jest w .Net Core przy użyciu 
-javascriptowego frameworka React.
+javascriptowego frameworka React. Dodane zostały również testy integracyjne i testy Selenium dla kontrolerów.
 W skład aplikacji wchodzą następujące kontrolery:
 - AccountController służący do wyświetlania aktualnej kwoty pieniędzy na koncie
 - ExpensesController pokazuje rozchody z konta
@@ -41,5 +41,7 @@ Baza danych została wykonana w MS SQL.
  MultipleActiveResultSets=True; App=EntityFrameworkCore; Trusted_Connection=True; 	Integrated Security=true;" 
  ```
  
-- Powiniśmy mieć połączenie z bazą - F5  - serwer powinien się włączyć
+- Powiniśmy mieć połączenie z bazą
+- Robimy migracje - dotnet Update-Database z konsoli
+- F5 - serwer powinien się włączyć
 - Teraz wystarczy włączyć clienta - w folderze ClientApp komenda - yarn start.
